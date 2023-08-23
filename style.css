@@ -1,4 +1,33 @@
+* {
+	box-sizing: border-box;
+	/* --bg-color:rgb(42, 59, 42); */
+	--bg-color:rgb(174, 181, 168);
+	--menucolor: rgb(236, 244, 225);
+	--text-color: rgb(28, 36, 28);
+}
+html, body {
+	/* height: 100%; */
+  	margin: 0;
+	-webkit-font-smoothing: antialiased;    
+    align-items: center;
+}
+
+#ground {
+    position: absolute;
+    z-index: 0;
+    /* background: url(images/background.JPG) no-repeat center;
+    background-size: cover; */
+    /* margin-left: -50%;
+    margin-top: -50%; */
+	/* font-size: calc(12px + 6 * ((100vw - 300px) / (1600 - 300))); */
+}
+
 
 h1{
+    position: fixed;
+    left:20px;
+    top:20px;  
     font-family: Arial Bold, sans-serif;
+    color: yellow;
+    z-index: 1;
 }
