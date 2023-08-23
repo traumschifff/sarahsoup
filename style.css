@@ -29,6 +29,9 @@ body{
 	/* font-size: calc(12px + 6 * ((100vw - 300px) / (1600 - 300))); */
 }
 
+.icon {
+    position:fixed;
+}
 
 h1{
     position: fixed;
