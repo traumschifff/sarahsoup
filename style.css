@@ -9,14 +9,21 @@ html, body {
 	/* height: 100%; */
   	margin: 0;
 	-webkit-font-smoothing: antialiased;    
-    align-items: center;
+}
+
+body{
+    /* display: flex;
+    align-items: center; */
 }
 
 #ground {
-    position: absolute;
-    z-index: 0;
-    /* background: url(images/background.JPG) no-repeat center;
-    background-size: cover; */
+    /* position: absolute;
+    z-index: 0; */
+    /* align-self: center; */
+    height: auto;
+    width: auto;
+    background: url(images/zoomsoup.gif) no-repeat center;
+    background-size: cover;
     /* margin-left: -50%;
     margin-top: -50%; */
 	/* font-size: calc(12px + 6 * ((100vw - 300px) / (1600 - 300))); */
