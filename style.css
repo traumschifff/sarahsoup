@@ -20,10 +20,10 @@ body{
     /* position: absolute;
     z-index: 0; */
     /* align-self: center; */
-    height: auto;
-    width: auto;
-    background: url(images/zoomsoup.gif) no-repeat center;
-    background-size: cover;
+    /* height: auto;
+    width: auto; */
+    /* background: url(images/zoomsoup.gif) no-repeat center;
+    background-size: cover; */
     /* margin-left: -50%;
     margin-top: -50%; */
 	/* font-size: calc(12px + 6 * ((100vw - 300px) / (1600 - 300))); */
@@ -34,7 +34,7 @@ body{
 }
 
 h1{
-    position: fixed;
+    position: absolute;
     left:20px;
     top:20px;  
     font-family: Arial Bold, sans-serif;
