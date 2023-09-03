@@ -19,10 +19,10 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    	@keyframes wiggle {
+    @keyframes wiggle {
 	  0%   {margin: 0; transform: rotate(0deg);}
-		50%  {margin: -10px 15px;  rotate(-16deg);}
-	  100% {margin: 13px 11px; rotate(15deg);}
+		50%  {margin: -10px 15px; transform: rotate(-16deg);}
+	  100% {margin: 13px 11px;transform: rotate(15deg);}
 		}
 
     .ground{
@@ -81,14 +81,14 @@
     }
     .ingredient{
       position: absolute;
-      height: 70px;
+      height: 90px;
       margin-top: 20px;
       animation: wiggle 10s infinite alternate;
       overflow: hidden;
       transition: 0.5s ease;
     }
     .ingredient img{
-      width: 100px;
+      width: 15vh;
       margin-top:30px;
       transition: 0.5s ease;
     }
