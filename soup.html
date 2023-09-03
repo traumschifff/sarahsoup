@@ -19,8 +19,14 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
+    	@keyframes wiggle {
+	  0%   {margin: 0; transform: rotate(0deg);}
+		50%  {margin: -10px 15px;  rotate(-16deg);}
+	  100% {margin: 13px 11px; rotate(15deg);}
+		}
+
     .ground{
-      background-color: midnightblue;
+      background: url(images/ice.png) repeat;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -31,16 +37,25 @@
       width: 200px;
     }
 
+    .stand{
+      position: absolute;
+      margin-top: 54%;
+      /* transform: translate(0, 50%); */
+
+    }
+
     .soup{
-      background-color: tomato;
+      background: radial-gradient(darkred, darkred, red);
       height: 90vh;
       width: 90vh;
       border-radius: 45vh;
-      border: 20px lightpink solid;
+      border: 10px lightblue solid;
+      -webkit-filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.6));
+	    filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.6));
     }
 
-    .letters:hover{
-      height: 21vh;
+    .letters:hover {
+      height: 16vh;
       -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
 	    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
     }
@@ -51,20 +66,41 @@
       letter-spacing: 0.2em;
       color: antiquewhite;
       position: absolute;
-      height: 20vh;
+      height: 15vh;
+      -webkit-filter: drop-shadow(10px whitesmoke);
+      filter: drop-shadow(10px whitesmoke);
+      transition: 2s ease;
     }
 
+    /* .letters:hover{
+      animation: wiggle 8s;
+    } */
+
+    .fam:hover .letters{
+      animation: wiggle 8s;
+    }
     .ingredient{
-      position: relative;
-      height: auto;
+      position: absolute;
+      height: 70px;
+      margin-top: 20px;
+      animation: wiggle 10s infinite alternate;
+      overflow: hidden;
+      transition: 0.5s ease;
     }
     .ingredient img{
       width: 100px;
+      margin-top:30px;
+      transition: 0.5s ease;
     }
 
     .ingredient:hover{
+      /* height: 100px; */
+      margin-top: 0px;
       -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
 	    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
+    }
+    .ingredient:hover img{
+      margin-top:0px;
     }
 
     .recipe{
@@ -91,10 +127,28 @@
 
     .recipe h2{
       text-transform: uppercase;
+      font-weight: lighter;
       text-align: center;
     }
+
     .recipe img{
-      width: 300px;
+      width: 5vh;
+    }
+
+    .hovericon{
+      visibility: hidden;
+    }
+    .hovericon:hover{
+      visibility: visible;
+    }
+  
+
+    img:hover + img{
+      visibility:visible;
+    }
+    
+    img.icon:hover{
+      visibility: hidden;
     }
 
   </style>
@@ -105,16 +159,18 @@
   <div class="ground">
     <h1>sarah's subsequent soup</h1>
 
+    <img class="stand" src="images/sarahstands.png">
+
     <div class="soup">
-      <div class="love">
+      <div id="love" class="fam">
 
-        <h2 class="letters" style="left: 62vw; top: 23vh;">love</h2>
-        <img class="letters" src="images/power.png" style="left: 32vw; top: 43vh;" alt=""/>
-        <!-- <h2 class="letters">power</h2>
-        <h2 class="letters">sex</h2> -->
+        <!-- <h2 class="letters" style="left: 62vw; top: 23vh;">love</h2> -->
+        <img class="letters" src="images/power.png" style="left: 48vw; top: 43vh;" alt=""/>
+        <img class="letters" src="images/love.png" style="left: 32vw; top: 22vh;" alt=""/>
+        <img class="letters" src="images/sex.png" style="left: 32vw; top: 43vh;" alt=""/>
 
 
-        <a href="#shrimp" style="left:30vw; top:64vh;" class="ingredient">
+        <a href="#shrimp" style="left:36vw; top:64vh;" class="ingredient">
           <img src="images/shrimp.png">
         </a>
         <div id="shrimp" class="recipe">
@@ -128,13 +184,83 @@
           </p>
         </div>
 
+        <a href="#horst" style="left:48vw; top:23vh;" class="ingredient">
+          <img src="images/chicken.png">
+        </a>
+        <div id="horst" class="recipe">
+          <a href="#" class="close">X</a>
+          <h2>Horst</h2>
+          <img src="images/horst.png">
+          <hr>
+          <h3>2022 </br> film </br> with ...</h3>
+          <hr>
+          <p>In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. 
+          </p>
+        </div>
 
-
+        <a href="#pigeon" style="left:58vw; top:64vh;" class="ingredient">
+          <img src="images/pigeon.png">
+        </a>
+        <div id="pigeon" class="recipe">
+          <a href="#" class="close">X</a>
+          <h2>pigeon poo power</h2>
+          <img src="images/pigeon.png">
+          <hr>
+          <h3>2022 </br> film </br> with ...</h3>
+          <hr>
+          <p>In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. 
+          </p>
+        </div>
 
       </div>
 
-      <div class="psyche">
+      <div id="psyche" class="fam">
 
+        <img class="letters" src="images/psyche.png" style="left: 52vw; top: 71vh;" alt=""/>
+        <img class="letters" src="images/shadows.png" style="left: 32vw; top: 65vh;" alt=""/>
+        <img class="letters" src="images/ghosts.png" style="left: 58vw; top: 26vh;" alt=""/>
+
+        <a href="#wool" style="left:44vw; top:44vh;" class="ingredient">
+          <img src="images/wool.png">
+        </a>
+        <div id="wool" class="recipe">
+          <a href="#" class="close">X</a>
+          <h2>Show me love</h2>
+          <img src="images/wool.png">
+          <hr>
+          <h3>2022 </br> film </br> with ...</h3>
+          <hr>
+          <p>In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. 
+          </p>
+        </div>
+
+        <a href="#well" style="left:25vw; top:45vh;" class="ingredient">
+          <img src="images/well.png">
+        </a>
+        <div id="well" class="recipe">
+          <a href="#" class="close">X</a>
+          <h2>fan fiction wishing well</h2>
+          <img src="images/well.png">
+          <hr>
+          <h3>2022 </br> film </br> with ...</h3>
+          <hr>
+          <p>In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. 
+          </p>
+        </div>
+
+        <a href="#couch" style="left:61vw; top:48vh;" class="ingredient">
+          <img src="images/couch.png">
+        </a>
+        <div id="couch" class="recipe">
+          <a href="#" class="close">X</a>
+          <h2>Psyche AI</h2>
+          <img src="images/couch.png">
+          <hr>
+          <h3>2022 </br> film </br> with ...</h3>
+          <hr>
+          <p>In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. 
+          </p>
+        </div>
 
       </div>
     </div>
@@ -142,6 +268,13 @@
   <div class="recipe">
 
   </div>
+
+  <img class="icon" src="images/sarahshrimp.gif" style="width: 200px; position: fixed; left: 10px; bottom: 20px;">
+
+  <img src="images/sarahshrimpshot.png" style="width: 200px; position: fixed; right: 10px; bottom: 20px;">
+  <img class="hovericon" src="images/sarahshrimpwiggle.png" style="width: 200px; position: fixed; right: 10px; bottom: 20px;">
+  
+
 
   </div>
 
