@@ -44,6 +44,10 @@
 
     }
 
+    .bio{
+
+    }
+
     .soup{
       background: radial-gradient(darkred, darkred, red);
       height: 90vh;
@@ -79,6 +83,8 @@
     .fam:hover .letters{
       animation: wiggle 8s;
     }
+  
+
     .ingredient{
       position: absolute;
       height: 90px;
@@ -99,6 +105,11 @@
       -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
 	    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.6));
     }
+
+    .letters:hover ~ .ingredient img{
+      margin-top: 0px;
+    }
+
     .ingredient:hover img{
       margin-top:0px;
     }
@@ -108,10 +119,10 @@
       opacity: 0;
       background-color: whitesmoke;
       position: fixed;
-      right: 50px;
-      top: 50px;
+      right: 0;
+      top: 0;
       width: 400px;
-      height: 90vh;
+      height: 100vh;
       padding: 20px;
       overflow-y: scroll;
       transition: all 0.1s;
@@ -141,7 +152,7 @@
     .hovericon:hover{
       visibility: visible;
     }
-  
+
 
     img:hover + img{
       visibility:visible;
@@ -160,6 +171,29 @@
     <h1>sarah's subsequent soup</h1>
 
     <img class="stand" src="images/sarahstands.png">
+
+    <details>
+      <summary></summary>
+    </details>
+    <div class="bio">
+      <h2>Hi you, what’s cookin?</h2>
+      <p>
+
+        I’m Sarah and this is my website.
+        
+        I'm an interdisciplinary artist and researcher working across a wide range of interests and mediums. I do end up making a lot of videos though.
+        
+        You can explore my work by clicking on different ingredients in The Soup.
+        
+        You can also:
+        > Get in touch
+        > Sign up for my Newsletter
+        > Download my CV
+        > Download my Porfolio
+        > Check out my Instagram
+        > See my work IRL
+        > See who I collaborated with</p>
+    </div>
 
     <div class="soup">
       <div id="love" class="fam">
