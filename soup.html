@@ -17,7 +17,7 @@
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="stylesheet" href="style.css">
-
+ 
   <style>
     @keyframes wiggle {
 	  0%   {margin: 0; transform: rotate(0deg);}
@@ -45,12 +45,38 @@
     }
 
     .bio{
+      position: absolute;
+      top: 120px;
+      left: 40px;
+      width: 320px;
+      background-color: lightpink;
+      padding: 20px;
+      user-select: none;
+      cursor: grab;
+      z-index: 2;
+      border-radius: 30px;
 
+    }
+    .bio details{
+      margin:0;
+      padding:0;
+    }
+    
+
+    .bio summary{
+      font-weight: bold;
+      font-style: italic;
+      font-size: 1.6em;
+      cursor: pointer;
+    }
+    .bio summary:hover{
+      color: coral;
     }
 
     .soup{
       background: radial-gradient(darkred, darkred, red);
       height: 90vh;
+      max-height: 100vw;
       width: 90vh;
       border-radius: 45vh;
       border: 10px lightblue solid;
@@ -168,32 +194,31 @@
 
 <body>
   <div class="ground">
-    <h1>sarah's subsequent soup</h1>
 
+    <div class="title">
+    <a href="/soup.html"><h1>Fittererr</h1></a>
+    <h2 class="subtitle">Research and concepts</h2>
+    </div>
+    
     <img class="stand" src="images/sarahstands.png">
 
+    <div class="bio" id="draggable">
     <details>
-      <summary></summary>
+      <summary>Hi you, what’s cookin?</summary>
+      <p>I’m Sarah and this is my website.</p>
+      <p>I'm an interdisciplinary artist and researcher working across a wide range of interests and mediums. I do end up making a lot of videos though.</p> 
+      <p>You can explore my work by clicking on different ingredients in The Soup.</p>       
+      <p>You can also:</p>
+      <a href="">> Get in touch</a><br>
+      <a href="">> Sign up for my Newsletter</a><br>
+      <a href="">> Download my CV</a><br>
+      <a href="">> Download my Porfolio</a><br>
+      <a href="">> Check out my Instagram</a><br>
+      <a href="">> See my work IRL</a><br>
+      <a href="">> See who I collaborated with</a>
     </details>
-    <div class="bio">
-      <h2>Hi you, what’s cookin?</h2>
-      <p>
-
-        I’m Sarah and this is my website.
-        
-        I'm an interdisciplinary artist and researcher working across a wide range of interests and mediums. I do end up making a lot of videos though.
-        
-        You can explore my work by clicking on different ingredients in The Soup.
-        
-        You can also:
-        > Get in touch
-        > Sign up for my Newsletter
-        > Download my CV
-        > Download my Porfolio
-        > Check out my Instagram
-        > See my work IRL
-        > See who I collaborated with</p>
     </div>
+
 
     <div class="soup">
       <div id="love" class="fam">
@@ -312,6 +337,35 @@
 
   </div>
 
+
+  <script>
+    const draggableElement = document.getElementById('draggable');
+
+let isDragging = false;
+let offsetX, offsetY;
+
+draggableElement.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    offsetX = e.clientX - draggableElement.getBoundingClientRect().left;
+    offsetY = e.clientY - draggableElement.getBoundingClientRect().top;
+    draggableElement.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+
+    const newX = e.clientX - offsetX;
+    const newY = e.clientY - offsetY;
+
+    draggableElement.style.left = newX + 'px';
+    draggableElement.style.top = newY + 'px';
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+    draggableElement.style.cursor = 'grab';
+});
+  </script>
 
 </body>
 </html>
