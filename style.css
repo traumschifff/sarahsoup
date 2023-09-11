@@ -33,10 +33,10 @@ body{
 }
 
 .subtitles{
-    position: fixed;
+    /* position: fixed;
     bottom: 40px;
     width: 80vw;
-    font: Arial Bold 1.5em;
+    font: Arial Bold 1.5em; */
 }
 
 .title{
