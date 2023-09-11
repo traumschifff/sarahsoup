@@ -16,7 +16,7 @@
   <meta property="og:image" content="">
 
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="style.css">
 
   <style>
     /* Reset some default styles */
@@ -56,10 +56,10 @@
     /* Style the hoverable PNG */
     .hoverable {
         position: absolute;
-        top: 32.5%;
-        left: 43%;
+        top: 32.7%;
+        left: 43.3%;
         cursor: url("images/spoonright.png"), zoom-in;
-        /* transform: translate(-50%, -50%); */
+        /* transform: translate( -50%, -50%); */
         z-index: 1; /* Place it above the background image */
     }
 
@@ -92,15 +92,65 @@
       cursor: url("images/spoonright.png"), zoom-in;
     }
 
-    .subtitle {
+    .subtitles {
         position: fixed;
-        top: 10px;
-        font-size: 24px;
+        bottom: 30px;
         z-index: 4;
         color: yellow;
+        font-family: Arial Bold, Arial;
+        font-style: italic;
+        letter-spacing: -0.04em;
+        -webkit-text-stroke-color: black;
+        -webkit-text-stroke-width: 0.04em; 
+        filter: drop-shadow(0 0 1em rgba(0,0,0,0.2));
         text-align: center;
-        font-size: 2em;
+        font-size: 3em;
     }
+
+    /* Hide all sentences by default */
+.sentence {
+    opacity: 0;
+    position: absolute;
+    bottom: 20px;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Show the first sentence */
+.sentence:first-child {
+    opacity: 1;
+}
+
+/* Create a CSS animation to toggle sentences */
+@keyframes toggleSentences {
+    0%, 25% {
+        opacity: 0;
+    }
+    26%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+.sentence:nth-child(1) {
+    animation: toggleSentences 16s steps(1, end) infinite;
+    animation-delay: 0s;
+}
+
+.sentence:nth-child(2) {
+    animation: toggleSentences 16s steps(1, end) infinite;
+    animation-delay: 4s; /* Delay the start of the second sentence by 3 seconds */
+}
+
+.sentence:nth-child(3) {
+    animation: toggleSentences 16s steps(1, end) infinite;
+    animation-delay: 8s; /* Delay the start of the third sentence by 6 seconds */
+}
+.sentence:nth-child(4) {
+    animation: toggleSentences 16s steps(1, end) infinite;
+    animation-delay: 12s; /* Delay the start of the third sentence by 6 seconds */
+}
 
   </style>
 
@@ -108,10 +158,20 @@
 
 <body>
   <div id="ground">
-    <h2 class="subtitle">Hi you I'm Sarah welcome inside my head</h2>
+    <div class="title">
+      <a href="/soup.html"><h1>Fittererr</h1></a>
+      <h2 class="subtitle">Research and concepts</h2>
+   </div>
+      
+    <div class="subtitles">
+      <h2 class="sentence"> Hi you I'm Sarah welcome inside my head</h2>
+      <h2 class="sentence"> well you will have to dive in first</h2>
+      <h2 class="sentence"> or just stay here.</h2>
+      <h2 class="sentence"> did you know early life once started in a muddy glaciar puddle?</h2>
+      </div>
 
     <div class="background">
-    <img id="back" src="images/bigground.png"/>
+    <img id="back" src="images/backmountain.png"/>
       
       <div class="hoverable">
         <a href="soup.html"><button>enter</button></a>
