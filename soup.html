@@ -26,7 +26,10 @@
 		}
 
     .ground{
-      background: url(images/ice.png) repeat;
+      position: fixed;
+      background: black;
+      background: url(images/soupbackzoom.jpg) no-repeat center;
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -34,48 +37,57 @@
       width: 100vw;
     }
 
-    .stand{
-      position: absolute;
-      margin-top: 54%;
+    #about{
+      position: fixed;
+      top: -50px;
+      right: 10px;
+      height: 20vh;
+      z-index: 2;
       /* transform: translate(0, 50%); */
-
     }
 
     .bio{
-      position: absolute;
-      top: 120px;
-      left: 40px;
-      width: 320px;
-      background-color: lightpink;
+      position: fixed;
+      top: 40px;
+      right: 150px;
+      width: 380px;
       padding: 20px;
-      user-select: none;
-      cursor: grab;
+      /* cursor: grab; */
       z-index: 2;
       border-radius: 30px;
+      color: whitesmoke;
     }
+
     .bio details{
       margin:0;
       padding:0;
-    }
-    
-
-    .bio summary{
-      font-weight: bold;
-      font-style: italic;
       font-size: 1.6em;
-      cursor: pointer;
     }
+
+    .bio a{
+      color: white;
+      text-decoration: none;
+    }
+    .bio a:hover{
+      text-decoration: underline;
+    }
+    .bio summary{
+      /* font-weight: bold;
+      font-style: italic; */
+      font-size: 1.2em;
+    }
+
     .bio summary:hover{
       color: coral;
+      /* cursor:zoom-in; */
     }
 
     .soup{
-      /* background: radial-gradient(indigo,darkslategrey,olivedrab, orange, red, darkred); */
-      /* background: radial-gradient(darkred, darkred, red); */
-      background: url(images/soup1.jpg) no-repeat center;
+      position: absolute;
       height: 100vh;
-      /* max-height: 100vw; */
+      max-height: 100vw;
       width: 100vw;
+      max-width: 100vh;
       /* border-radius: 45vh; */
       /* border: 10px lightblue solid; */
       /* -webkit-filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.6));
@@ -111,8 +123,10 @@
 
     .ingredient{
       position: absolute;
+      /* display: block; */
       height: 90px;
       margin-top: 20px;
+      /* transform: translate(-50%,-50%); */
       animation: wiggle 10s infinite alternate;
       overflow: hidden;
       transition: 0.5s ease;
@@ -121,6 +135,7 @@
       width: 15vh;
       margin-top:30px;
       transition: 0.5s ease;
+      /* transform: translate(-50%,-50%); */
     }
 
     .ingredient:hover{
@@ -141,18 +156,24 @@
     .recipe{
       visibility: hidden;
       opacity: 0;
-      background-color: gold;
-      border: 5px solid black;
+      background: url(images/soupbackzoom.jpg) no-repeat center;
+      background-size: cover;
+      /* background-color: gold;
+      border: 5px solid black; */
       position: fixed;
       right: 0;
       top: 0;
-      width: 400px;
+      width: 100vw;
       height: 100vh;
-      padding: 20px;
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+      padding: 200px;
       overflow-y: scroll;
       transition: all 0.1s;
-      z-index: 4;
-      pointer-events: none;
+      z-index: 1;
+      /* pointer-events: none; */
+      color: whitesmoke;
     }
 
     .recipe:target {
@@ -161,6 +182,23 @@
       pointer-events: auto;
     }
 
+    .recipe:target ~ .ingredient img{
+      margin-top: 80px;
+    }
+    .recipe:target ~ .letters{
+      height: 5vh;
+    }
+    .recipe .close{
+      position: fixed;
+      height: 100%;
+      width: 100%;
+    }
+
+    .recipe .content{
+      width: 80%;
+      max-width: 80vh;
+      margin: auto;
+    }
     .recipe h2{
       text-transform: uppercase;
       font-weight: lighter;
@@ -168,7 +206,7 @@
     }
 
     .recipe img{
-      width: 5vh;
+      width: 100%;
     }
 
     .hovericon{
@@ -187,6 +225,43 @@
       visibility: hidden;
     }
 
+    footer{
+      position: fixed;
+      bottom: 0px;
+      left: 20px
+    }
+    footer p{
+      color: whitesmoke;
+      text-align: left;
+    }
+    footer a{
+      color: inherit;
+      /* text-decoration; */
+    }
+
+        /* Create a CSS animation to toggle sentences */
+    @keyframes toggleSentences {
+        0%, 45% {
+            opacity: 1;
+        }
+        50%, 100% {
+            opacity: 0;
+        }
+    }
+
+    .sentence{
+      font-size: 0.8em;
+    }
+
+    .sentence:nth-child(1) {
+        animation: toggleSentences 16s steps(1, end) infinite;
+        animation-delay: 0s;
+    }
+
+    .sentence:nth-child(2) {
+        animation: toggleSentences 16s steps(1, end) infinite;
+        animation-delay: 8s;
+    }
   </style>
 
 </head>
@@ -199,14 +274,16 @@
     <h2 class="subtitle">Research and concepts</h2>
     </div>
 
-    <div class="bio" id="draggable">
+    <img id="about" src="images/sarahstandssmall.png" alt="">
+    <div class="bio">
     <details>
-      <summary>Hi you, what’s cookin?</summary>
+      <summary>Hi you, what’s cookin?
+      </summary>
       <p>I’m Sarah and this is my website.</p>
       <p>I'm an interdisciplinary artist and researcher working across a wide range of interests and mediums. I do end up making a lot of videos though.</p> 
       <p>You can explore my work by clicking on different ingredients in The Soup.</p>       
       <p>You can also:</p>
-      <a href="">> Get in touch</a><br>
+      <a href="">> Email me</a><br>
       <a href="">> Sign up for my Newsletter</a><br>
       <a href="">> Download my CV</a><br>
       <a href="">> Download my Porfolio</a><br>
@@ -220,17 +297,18 @@
     <div class="soup">
       <div id="love" class="fam">
 
-        <!-- <h2 class="letters" style="left: 62vw; top: 23vh;">love</h2> -->
-        <img class="letters" src="images/power.png" style="left: 48vw; top: 43vh;" alt=""/>
-        <img class="letters" src="images/love.png" style="left: 32vw; top: 22vh;" alt=""/>
-        <img class="letters" src="images/sex.png" style="left: 32vw; top: 43vh;" alt=""/>
+        <!-- <h2 class="letters" style="left: 62vw; top: 23%;">love</h2> -->
+        <img class="letters" src="images/power.png" style="left: 48%; top: 43%;" alt=""/>
+        <img class="letters" src="images/love.png" style="left: 32%; top: 22%;" alt=""/>
+        <img class="letters" src="images/sex.png" style="left: 32%; top: 43%;" alt=""/>
 
 
-        <a href="#shrimp" style="left:36vw; top:64vh;" class="ingredient">
+        <a href="#shrimp" style="left:36%; top:64%;" class="ingredient">
           <img src="images/shrimp.png">
         </a>
         <div id="shrimp" class="recipe">
           <a href="#" class="close">X</a>
+          <div class="content">
           <h2>shrimp love</h2>
           <img src="images/shrimp.png">
           <hr>
@@ -238,13 +316,15 @@
           <hr>
           <p>In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. 
           </p>
+          </div>
         </div>
 
-        <a href="#horst" style="left:48vw; top:23vh;" class="ingredient">
+        <a href="#horst" style="left:48%; top:23%;" class="ingredient">
           <img src="images/chicken.png">
         </a>
         <div id="horst" class="recipe">
           <a href="#" class="close">X</a>
+          <div class="content">
           <h2>Horst</h2>
           <img src="images/horst.png">
           <hr>
@@ -252,9 +332,10 @@
           <hr>
           <p>In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. 
           </p>
+          </div>
         </div>
 
-        <a href="#pigeon" style="left:58vw; top:64vh;" class="ingredient">
+        <a href="#pigeon" style="left:58%; top:64%;" class="ingredient">
           <img src="images/pigeon.png">
         </a>
         <div id="pigeon" class="recipe">
@@ -272,11 +353,11 @@
 
       <div id="psyche" class="fam">
 
-        <img class="letters" src="images/psyche.png" style="left: 52vw; top: 71vh;" alt=""/>
-        <img class="letters" src="images/shadows.png" style="left: 32vw; top: 65vh;" alt=""/>
-        <img class="letters" src="images/ghosts.png" style="left: 58vw; top: 26vh;" alt=""/>
+        <img class="letters" src="images/psyche.png" style="left: 52%; top: 71%;" alt=""/>
+        <img class="letters" src="images/shadows.png" style="left: 32%; top: 65%;" alt=""/>
+        <img class="letters" src="images/ghosts.png" style="left: 58%; top: 26%;" alt=""/>
 
-        <a href="#wool" style="left:44vw; top:44vh;" class="ingredient">
+        <a href="#wool" style="left:44%; top:44%;" class="ingredient">
           <img src="images/wool.png">
         </a>
         <div id="wool" class="recipe">
@@ -290,7 +371,7 @@
           </p>
         </div>
 
-        <a href="#well" style="left:25vw; top:45vh;" class="ingredient">
+        <a href="#well" style="left:15%; top: 45%;" class="ingredient">
           <img src="images/well.png">
         </a>
         <div id="well" class="recipe">
@@ -304,7 +385,7 @@
           </p>
         </div>
 
-        <a href="#couch" style="left:61vw; top:48vh;" class="ingredient">
+        <a href="#couch" style="left:61%; top:48%;" class="ingredient">
           <img src="images/couch.png">
         </a>
         <div id="couch" class="recipe">
@@ -321,21 +402,23 @@
       </div>
     </div>
 
-  <div class="recipe">
-
-  </div>
-
-  <img class="icon" src="images/sarahshrimp.gif" style="width: 200px; position: fixed; left: 10px; bottom: 20px;">
 
   <img src="images/sarahshrimpshot.png" style="width: 200px; position: fixed; right: 10px; bottom: 20px;">
   <img class="hovericon" src="images/sarahshrimpwiggle.png" style="width: 200px; position: fixed; right: 10px; bottom: 20px;">
-  
 
+  <div class="subtitles">
+    <h2 class="sentence">Scoop out a project you want to get to know</h2>
+    <h2 class="sentence">Or click me to get in touch</h2>
+  </div>
+  
+  <footer>
+    <p>this site was cooked in 2023 with <a href="https://www.supergijs.com">supergijs</a></p>
+  </footer>
 
   </div>
 
 
-  <script>
+  <!-- <script>
     const draggableElement = document.getElementById('draggable');
 
 let isDragging = false;
@@ -362,7 +445,7 @@ document.addEventListener('mouseup', () => {
     isDragging = false;
     draggableElement.style.cursor = 'grab';
 });
-  </script>
+  </script> -->
 
 </body>
 </html>
