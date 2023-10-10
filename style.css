@@ -45,7 +45,7 @@ body{
     top:20px;  
     text-align: center;
     z-index: 5;
-    font-size: 30px;
+    font-size: 1.2em;
     filter: drop-shadow(0px 0px 0.8em white);
 }
 
