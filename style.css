@@ -85,7 +85,7 @@ body{
     left: 5vw;
     bottom: 20px;
     height: 200px;
-    z-index: 4;
+    z-index: 1;
     color: yellow;
     font-family: Arial Bold, Arial;
     font-style: italic;

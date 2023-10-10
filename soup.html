@@ -42,7 +42,7 @@
       top: -50px;
       right: 10px;
       height: 20vh;
-      z-index: 2;
+      z-index: 3;
       /* transform: translate(0, 50%); */
     }
 
@@ -53,7 +53,7 @@
       width: 380px;
       padding: 20px;
       /* cursor: grab; */
-      z-index: 2;
+      z-index: 3;
       border-radius: 30px;
       color: whitesmoke;
     }
@@ -171,7 +171,7 @@
       padding: 200px;
       overflow-y: scroll;
       transition: all 0.1s;
-      z-index: 1;
+      z-index: 2;
       /* pointer-events: none; */
       color: whitesmoke;
     }
@@ -192,12 +192,15 @@
       position: fixed;
       height: 100%;
       width: 100%;
+      z-index: 1;
     }
 
     .recipe .content{
       width: 80%;
       max-width: 80vh;
       margin: auto;
+      position: relative;
+      z-index: 2;
     }
     .recipe h2{
       text-transform: uppercase;
@@ -233,6 +236,7 @@
     footer p{
       color: whitesmoke;
       text-align: left;
+      filter: drop-shadow(1px 1px 5px black);
     }
     footer a{
       color: inherit;
