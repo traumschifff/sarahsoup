@@ -15,7 +15,7 @@
   <meta property="og:description" content="">
   <meta property="og:image" content="">
 
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/images/tinysoup.ico">
   <link rel="stylesheet" href="style.css">
  
   <style>
@@ -39,8 +39,8 @@
 
     #about{
       position: fixed;
-      top: -50px;
-      right: 10px;
+      top: 0px;
+      right: 0px;
       height: 20vh;
       z-index: 3;
       /* transform: translate(0, 50%); */
@@ -49,7 +49,7 @@
     .bio{
       position: fixed;
       top: 40px;
-      right: 150px;
+      right: 20px;
       width: 380px;
       padding: 20px;
       /* cursor: grab; */
@@ -63,7 +63,9 @@
       padding:0;
       font-size: 1.6em;
     }
-
+    .bio h2{
+      font-weight: normal;
+    }
     .bio a{
       color: white;
       text-decoration: none;
@@ -88,6 +90,7 @@
       max-height: 100vw;
       width: 100vw;
       max-width: 100vh;
+      cursor: url("images/spoonright.png"), zoom-in;
       /* border-radius: 45vh; */
       /* border: 10px lightblue solid; */
       /* -webkit-filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.6));
@@ -136,6 +139,8 @@
       margin-top:30px;
       transition: 0.5s ease;
       /* transform: translate(-50%,-50%); */
+      cursor: url("images/spoonright.png"), zoom-in;
+
     }
 
     .ingredient:hover{
@@ -168,12 +173,14 @@
       /* display: flex;
       justify-content: center;
       align-items: center; */
-      padding: 200px;
-      overflow-y: scroll;
+      padding: 0 20vw;
+      /* overflow-y: scroll; */
       transition: all 0.1s;
       z-index: 2;
+      font-size: 2em;
       /* pointer-events: none; */
       color: whitesmoke;
+      /* -webkit-mask-image: radial-gradient(#000 60%, transparent 85%); */
     }
 
     .recipe:target {
@@ -195,14 +202,20 @@
       z-index: 1;
       top: 0;
       left: 0;
+      cursor: url("images/spoonright.png"), zoom-in;
     }
 
     .recipe .content{
-      width: 80%;
-      max-width: 80vh;
-      margin: auto;
-      position: relative;
+      width: 60%;
+      /* max-width: 80vh; */
+      height: 100vh;
+      /* margin: auto; */
+      position: absolute;
       z-index: 2;
+      overflow: scroll;
+      -webkit-mask-image: radial-gradient(#000 60%, transparent 85%);
+      padding: 300px 0;
+      cursor: crosshair;
     }
     .recipe h2{
       text-transform: uppercase;
@@ -210,8 +223,14 @@
       text-align: center;
     }
 
+    .recipe h3 {
+      text-align: center;
+      font-weight: normal;
+      letter-spacing: 0.05em;
+    }
+
     .recipe img{
-      width: 100%;
+      width: 50%;
     }
 
     .hovericon{
@@ -280,11 +299,12 @@
     <h2 class="subtitle">Research and concepts</h2>
     </div>
 
-    <img id="about" src="images/sarahstandssmall.png" alt="">
     <div class="bio">
     <details>
-      <summary>Hi you, what’s cookin?
+      <summary>ABOUT
       </summary>
+      <img id="about" src="images/sarahstandssmall.png" alt="">
+      <H2>Hi you, what’s cookin?</H2>
       <p>I’m Sarah and this is my website.</p>
       <p>I'm an interdisciplinary artist and researcher working across a wide range of interests and mediums. I do end up making a lot of videos though.</p> 
       <p>You can explore my work by clicking on different ingredients in The Soup.</p>       
@@ -331,13 +351,24 @@
         <div id="horst" class="recipe">
           <a href="#" class="close">X</a>
           <div class="content">
+            <img src="images/horst.png">
+
           <h2>Horst</h2>
-          <img src="images/horst.png">
           <hr>
-          <h3>2021 </br> film </br> with ...</h3>
+          <h3>2021 </br> multiple media </br> graduation project</h3>
           <hr>
-          <p>In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. 
+          <p>I created a sextoy for my alter-ego, Horst. Horst is male, mid-forties, right-wing. Years of military service have left him struggling with his identity. He navigates a path between being respected as a man and the pitfalls of toxic masculinity. 
           </p>
+          <p>The project HORST has different elements to it:</p>
+          <ul>
+            <li> A sex toy (HORST_mychickpic) in the shape of a giant chicken illustrates both his misogynous worldview and his fondness for meat.</li>
+            <li>An abstracted <a href="https://youtu.be/RYRGXWpjqqw" target="_blank">mash-up</a> (HORST_becamegif) of five blockbuster films convey the narcissistic personality of the tough hero.</li>
+            <li>A corset (HORST_corsetpic) alludes to his insecurity about his body and the six-pack he lacks.</li>
+            <li>In a modified version of the first-person shooter game (HORST_gamepic) UltimateDOOM, one can shoot the enemeies in form of the chicken.</li>
+          </ul>
+          <p>Grim and absurd in equal measure, ‘Horst’ makes us realize just how difficult it is to be a man in a world of media clichés and shifting gender identities.</p>
+          <hr>
+          <p>The project was developed during my final semester at Design Academy Eindhoven. The Doom game was commissioned by Museum of the Future Enschede.</p>
           </div>
         </div>
 
@@ -353,6 +384,7 @@
           <hr>
           <p>In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. In this project, I tried to make shrimps have babies. 
           </p>
+          <p></p>
         </div>
 
       </div>
